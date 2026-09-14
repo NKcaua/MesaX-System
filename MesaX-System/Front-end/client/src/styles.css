@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #fffbf0;
+  --foam: #fff5e0;
+  --ink: #14110c;
+  --muted: #4a453d;
+  --glass: rgba(255, 251, 240, 0.48);
+  --glass-strong: rgba(255, 251, 240, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.64);
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-foam: var(--foam);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --font-sans: "Poppins", system-ui, sans-serif;
+  --font-display: "Fraunces", "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.011em;
+  line-height: 1.5;
+  background:
+    radial-gradient(ellipse 90% 55% at 8% -8%, #ffe4b8 0%, transparent 52%),
+    radial-gradient(ellipse 70% 45% at 96% 8%, #ffd7a0 0%, transparent 48%),
+    radial-gradient(ellipse 55% 35% at 50% 108%, #fff1d2 0%, transparent 50%),
+    var(--cream);
+  min-height: 100dvh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  letter-spacing: -0.034em;
+  line-height: 1.12;
+}
+
+.eyebrow {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(22px) saturate(170%);
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 18px 50px rgba(70, 42, 8, 0.08);
+}
+
+.glass-strong {
+  background: var(--glass-strong);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 12px 36px rgba(70, 42, 8, 0.07);
+}
+
+.glass-dark {
+  background: rgba(18, 14, 8, 0.38);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--cream);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 52px;
+  padding: 0 1.85rem;
+  border-radius: 9999px;
+  border: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.012em;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--cream);
+  box-shadow: 0 10px 28px rgba(20, 17, 12, 0.22);
+}
+
+.btn-primary:hover:not(:disabled) {
+  box-shadow: 0 14px 32px rgba(20, 17, 12, 0.28);
+}
+
+.btn-ghost {
+  background: var(--glass);
+  color: var(--ink);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.btn-sm {
+  height: 44px;
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
+}
+
+.field {
+  width: 100%;
+  height: 52px;
+  border-radius: 9999px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 0 1.25rem;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink);
+  outline: none;
+}
+
+.field:focus {
+  box-shadow: 0 0 0 3px rgba(20, 17, 12, 0.08);
+}
+
+input.field,
+select.field {
+  appearance: none;
+}
