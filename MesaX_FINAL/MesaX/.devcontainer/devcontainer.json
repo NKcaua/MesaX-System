@@ -1,0 +1,14 @@
+{
+  "name": "MesaX",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "20" }
+  },
+  "postCreateCommand": "bash .devcontainer/instalar.sh",
+  "postStartCommand": "nohup bash iniciar.sh > /tmp/mesax.log 2>&1 &",
+  "forwardPorts": [43123, 43124],
+  "portsAttributes": {
+    "43123": { "label": "MesaX (site)", "onAutoForward": "openBrowser" },
+    "43124": { "label": "MesaX (API)", "onAutoForward": "silent" }
+  }
+}
